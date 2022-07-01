@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/github.css">
+<div id="github-jobs-container" class="container">
+    <div id="github-title" class="mt-4">
+        <h2>Placements | Github Jobs</h2>
+    </div>
+
+    <div id="job-container">
+        <%for(job of jobs){%>
+            <div id="jobs">
+                <div id="logo">
+                    <img src="<%=job.company_logo%>" alt="<%=job.company%>">
+                </div>
+
+                <div id="job-info">
+                    <h4 id="profile-title"><a href="<%=job.url%>"><%=job.title%></a></h4>
+                    <p id="profile-type"><%=job.type%></p>
+                    <p id="company-name"><%=job.company%></p>
+                    <p id="createdAt"><%=job.created_at%></p>
+                    <p id="job-location"><%=job.location%></p>
+                </div>
+
+                <div id="job-description"><%=job.description%></div>
+            </div>
+            <hr>
+        <%}%>
+    </div>
+</div>

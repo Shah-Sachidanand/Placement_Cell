@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/css/scheduleinterview.css">
+
+<div id="schedule-interview-container">
+    <div id="title">
+        <h1>Placement | Scheduling Interview | <%=interview.company%>/<%=interview.profile%></h1>
+    </div>
+
+    <div id="add-student-form" class="card mt-5">
+        <form class="form-group" action="/scheduling/adding-student/<%=interview._id%>" method="POST">
+            <input type="date" name="date" id="date-of-interview" class="form-control" required>
+            <select name="student" required>
+                <option value="" selected disabled>Select the Student</option>
+                <% for(s of student){%>
+                    <option value="<%=s._id%>" title="<%=s.name%>"><%=s.name%></option>
+                <%}%>
+            </select> 
+            <input type="submit" value="Add Student" class="btn btn-success">
+        </form>
+    </div>
+
+    <div id="student-schedule-list">
+        <table class="table table-dark">
+            <thead class="thead-light">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Student Name</th>
+                    <th>Date</th>
+                    <th>Result</th>
+                    <th colspan="2" style="text-align: center;">Update Result</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(s of interview.listofstudents){%>
+                    <form action="/scheduling/updating-result/<%=interview._id%>" method="POST" class="form-group">
+                        <tr>
+                            <td><%=s.student._id%></td>
+                            <td><%=s.student.name%></td>
+                            <td><%=s.date%></td>
+                            <td><%=s.result%></td>
+                            <td>
+                                <input type="hidden" name="student" value="<%= s.student._id %>">
+                                <select name="result" id="select-result">
+                                    <option value="" disabled selected>Result</option>
+                                    <option value="PASS">PASS</option>
+                                    <option value="FAIL" >FAIL</option>
+                                    <option value="On Hold" >On Hold</option>
+                                    <option value="Didn’t Attempt" >Didn’t Attempt</option>                                
+                                </select>
+                            </td>
+                            <td><input type="submit" value="Update" class="btn btn-primary"></td>
+                        </tr>
+                    </form>   
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+</div>

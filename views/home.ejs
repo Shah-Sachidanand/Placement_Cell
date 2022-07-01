@@ -1,18 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="/assets/CSS/home.css">
-</head>
-<body>
-    <div id="home-container">
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container">
+    <%if(locals.user){%>
         <div id="display">
-            <div id="user_name">
-                <h3>Welcome</h3>
+            <div id="user-name">
+                <h3>Welcome <%=user.name%>,</h3>
             </div>
             <div id="buttons">
-
+                <a href="/students/fetch" class="btn btn-primary">Students</a>
+                <a href="/interviews/fetch-interview" class="btn btn-primary">Interviews</a>
+                <a href="/csv/download" class="btn btn-info">Export CSV(Results)</a>
+                <a href="/github-jobs" class="btn btn-link">Github Jobs</a>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    <%}else{%>
+        <div id="signin-signup-container">
+            <%-include('user_sign_in'); -%>
+            <%-include('user_sign_up'); -%>
+        </div>
+    <%}%>
+</div>

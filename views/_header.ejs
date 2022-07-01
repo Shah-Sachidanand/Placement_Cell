@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/CSS/header.css">
+<header>
+    <div id="logo">
+        <a href="/"><h1>Placement Cell | Admin</h1></a>
+    </div>
+
+    <% if(locals.user){%>
+        <div id="welcome-text">
+            <h2>Hello! <%=user.name%> </h2>
+            <a href="/users/sign-out" class="btn btn-outline-danger">Sign OUT</a>
+        </div>
+    <%}%>
+</header>
