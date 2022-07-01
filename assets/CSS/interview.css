@@ -1,0 +1,9 @@
+#interview-title{
+    text-align: center;
+}
+
+#interview-form form{
+    width: 50%;
+    display: flex;
+    align-self: center;
+}

@@ -1,0 +1,18 @@
+header{
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+#logo a:hover{  
+    text-decoration:none;
+}
+
+#welcome-text{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}

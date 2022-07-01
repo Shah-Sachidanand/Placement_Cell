@@ -1,0 +1,10 @@
+#title{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#add-student-form form{
+    width: 50%;
+    display: flex;
+    align-self: center;
+}
