@@ -5,15 +5,15 @@
     </div>
 
     <div id="interview-form" class="card mt-5">
-        <form action="/interviews/create-interview" method="POST" class="form-group card">
-            <input type="text" name="company" class="form-control" placeholder="Company Name" required>
-            <input type="text" name="profile" class="form-control" placeholder="Profile" required>
+        <form action="/interviews/create-interview" method="POST" class="form-group card mt-3">
+            <input type="text" name="company" class="form-control mb-2" placeholder="Company Name" required>
+            <input type="text" name="profile" class="form-control mb-2" placeholder="Profile" required>
             <input type="submit" value="Add Company & Schedule" class="btn btn-success">
         </form>
     </div>
 
     <div id="interview-list-container">
-        <table id="list" class="table table-dark">
+        <table id="list" class="table table-dark table-hover">
             <thead class="thead-light">
                 <tr>
                     <th>Company_ID</th>

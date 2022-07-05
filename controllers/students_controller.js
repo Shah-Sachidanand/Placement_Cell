@@ -9,7 +9,7 @@ module.exports.createStudent = async function(req,res){
     try{
         let student = await Student.findOne({email:req.body.email});
         if(student){
-            console.log('Student already exist');
+            req.flash('Student already exist');
             return res.redirect('back');
         }else{
             let student = await Student.create({

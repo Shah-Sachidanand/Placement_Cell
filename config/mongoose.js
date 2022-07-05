@@ -1,5 +1,5 @@
-//Database Connection File
 
+//Database Connection File
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/Placement-Cell',{useNewUrlParser:true});

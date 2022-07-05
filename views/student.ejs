@@ -7,13 +7,13 @@
         </h1>
     </div>
 
-    <div id="student-form" class="card mt-5">
+    <div id="student-form" class="card mt-5" >
         <form action="/students/create-student" method="POST" class="form-group card">
-            <input type="text" name="name" id="student-name" class="form-control" placeholder="Name" required>
-            <input type="email" name="email" id="student-email" class="form-control" placeholder="Email" required>
-            <input type="text" name="college" id="student-college" class="form-control" placeholder="College Name" required>
+            <input type="text" name="name" id="student-name" class="form-control mb-2" placeholder="Name" required>
+            <input type="email" name="email" id="student-email" class="form-control mb-2" placeholder="Email" required>
+            <input type="text" name="college" id="student-college" class="form-control mb-2" placeholder="College Name" required>
             
-            <select name="batch" id="select-batch" class="">
+            <select name="batch" id="select-batch" class="mb-2">
                 <option value="" disabled selected>Select Batch</option>
                 <option value="Career Camp">Career Camp</option>
                 <option value="React">React</option>
@@ -21,21 +21,21 @@
                 <option value="Cognizense">Cognizense</option>
             </select>
 
-            <select name="status" id="select-status">
+            <select name="status" id="select-status" class="mb-2">
                 <option value="" disabled selected>Select Status</option>
                 <option value="Placed"> Placed </option>
                 <option value="Not_Placed"> Not Placed</option>
             </select>
 
-            <input type="text" name="dsa" placeholder="Data SA Score" class="form-control">
-            <input type="text" name="webd" placeholder="Web Dev Score" class="form-control">
-            <input type="text" name="react" placeholder="Reactjs Score" class="form-control">
+            <input type="text" name="dsa" placeholder="Data SA Score" class="form-control mb-2">
+            <input type="text" name="webd" placeholder="Web Dev Score" class="form-control mb-2">
+            <input type="text" name="react" placeholder="Reactjs Score" class="form-control mb-2">
             <input type="submit" value="Add Student" class="btn btn-success"> 
         </form>
     </div>
 
     <div id="students-list-container">
-        <table id="student-table" class="table table-dark">
+        <table id="student-table" class="table table-hover">
             <thead class="thead-light">
                 <tr>
                     <th rowspan="2">Student_ID</th>

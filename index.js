@@ -9,6 +9,8 @@ const expressLayouts = require('express-ejs-layouts');
 //Express Session
 const session = require('express-session');               // used for session cookie
 const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 //Import Passport, passport local strategy
 const passport = require('passport');
@@ -43,7 +45,7 @@ app.use(session({
             autoRemove: 'disabled'
         },
         function(err){
-            console.log(err ||  'connect-mongodb Setup OK');
+            console.log(err ||  'connect-mongodb setup ok');
         }
     )
 }));
@@ -53,13 +55,16 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
 
-//Use Express Router
-app.use('/',require('./routes'))
+app.use(flash());
+app.use(customMware.setFlash);
 
-// Server Listener
+// use express router
+app.use('/', require('./routes'));
+
+//Server Listener
 app.listen(port, function(err){
-    if(err){
-        console.log(`Error in Starting The Server : ${err}`);
+    if (err){
+        console.log(`Error in running the server: ${err}`);
     }
-    console.log(`Server is Running On PORT: ${port}`);
-})
+    console.log(`Server is running on port: ${port}`);
+});

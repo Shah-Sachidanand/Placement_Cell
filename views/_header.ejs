@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/CSS/header.css">
 <header>
     <div id="logo">
-        <a href="/"><h1>Placement Cell | Admin</h1></a>
+        <a href="/"><h1> Welcome To Placement Cell</h1></a>
     </div>
 
     <% if(locals.user){%>
@@ -9,5 +9,10 @@
             <h2>Hello! <%=user.name%> </h2>
             <a href="/users/sign-out" class="btn btn-outline-danger">Sign OUT</a>
         </div>
-    <%}%>
-</header>
+    <%} else{%>
+        <div>
+        <a href="/users/sign-up" class="btn btn-outline-danger" id = "hide">Create Employee Account</a>
+        <a href="/users/sign-in" class="btn btn-outline-danger" id = "back" style="display:none;">Sign IN</a>
+        </div>
+        <%}%>
+    </header>
