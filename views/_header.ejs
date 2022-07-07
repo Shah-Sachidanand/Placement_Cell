@@ -12,7 +12,11 @@
     <%} else{%>
         <div>
         <a href="/users/sign-up" class="btn btn-outline-danger" id = "hide">Create Employee Account</a>
-        <a href="/users/sign-in" class="btn btn-outline-danger" id = "back" style="display:none;">Sign IN</a>
+        <div id = "back" style="display:none;">
+            <span style="font-size:1.25rem;">Already have an account</span>
+            <a href="/users/sign-in" class="btn btn-outline-danger" >Sign IN</a>
+        </div>
+        
         </div>
         <%}%>
     </header>

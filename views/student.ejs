@@ -15,9 +15,9 @@
             
             <select name="batch" id="select-batch" class="mb-2">
                 <option value="" disabled selected>Select Batch</option>
-                <option value="Career Camp">Career Camp</option>
+                <option value="Career Camp Freshers">Career Camp Freshers</option>
+                <option value="Career Camp Professionals">Career Camp Professionals</option>
                 <option value="React">React</option>
-                <option value="Alchemy">Alchemy</option>
                 <option value="Cognizense">Cognizense</option>
             </select>
 
@@ -36,10 +36,9 @@
 
     <div id="students-list-container">
         <table id="student-table" class="table table-hover">
-            <thead class="thead-light">
+            <thead class="thead-dark">
                 <tr>
-                    <th rowspan="2">Student_ID</th>
-                    <th rowspan="2">Name</th>
+                    <th rowspan="2">Student Name</th>
                     <th rowspan="2">Email</th>
                     <th rowspan="2">Batch</th>
                     <th rowspan="2">College</th>
@@ -55,7 +54,6 @@
             <tbody class="table-hover">
                 <%for(s of students){%>
                     <tr>
-                        <td><%=s._id%></td>
                         <td><%=s.name%></td>
                         <td><%=s.email%></td>
                         <td><%=s.batch%></td>

@@ -16,7 +16,6 @@
         <table id="list" class="table table-dark table-hover">
             <thead class="thead-light">
                 <tr>
-                    <th>Company_ID</th>
                     <th>Company</th>
                     <th>Profile</th>
                     <th>Schedule Interview</th>
@@ -25,7 +24,6 @@
             <tbody class="table-hover">
                 <% for(i of interview){%>
                     <tr>
-                        <td><%=i._id%></td>
                         <td><%=i.company%></td>
                         <td><%=i.profile%></td>
                         <td style="width: 25%;"><a href="/scheduling/schedule-interview/<%=i._id%>">Schedule students for <%=i.company%>/<%=i.profile%></a></td>                       
