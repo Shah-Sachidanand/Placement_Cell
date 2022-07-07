@@ -3,10 +3,12 @@
     justify-content: space-around;
     width: 100%;
     margin-top: 100px;
+    text-align: center;
 }
 
 #home-container #display{
     margin: 50px;
+    text-align: center;
 }
 
 #buttons{
