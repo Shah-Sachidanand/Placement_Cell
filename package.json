@@ -19,7 +19,7 @@
   "name": "placement-cell",
   "version": "1.0.0",
   "description": "For Placement cell use only",
-  "main": "app.js",
+  "main": "index.js",
   "devDependencies": {},
   "scripts": {
     "test": "OP",
