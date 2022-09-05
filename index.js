@@ -1,7 +1,7 @@
 //Express Server
 const express = require('express');
 const app = express();
-const port = 5050;
+const port = 3000;
 const db = require('./config/mongoose');
 
 const expressLayouts = require('express-ejs-layouts');
