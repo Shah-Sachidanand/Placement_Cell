@@ -15,27 +15,5 @@
     "noty": "^3.2.0-beta-deprecated",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0"
-  },
-  "name": "placement-cell",
-  "version": "1.0.0",
-  "description": "For Placement cell use only",
-  "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "OP",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sachidanand9/Placement_Cell.git"
-  },
-  "keywords": [
-    "OP"
-  ],
-  "author": "Sachidanand",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Sachidanand9/Placement_Cell/issues"
-  },
-  "homepage": "https://github.com/Sachidanand9/Placement_Cell#readme"
+  }
 }
