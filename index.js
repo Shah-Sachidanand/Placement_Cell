@@ -1,14 +1,21 @@
 //Express Server
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT || 8000;
-const db = require('./config/mongoose');
+
+//------------ DB Configuration ------------//
+const db = require('./config/key').MongoURI;
+
+//------------ Mongo Connection ------------//
+mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("Successfully connected to MongoDB"))
+    .catch(err => console.log(err));
 
 const expressLayouts = require('express-ejs-layouts');
 
 //Express Session
 const session = require('express-session');               // used for session cookie
-const MongoStore = require('connect-mongo')(session);
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
@@ -34,21 +41,9 @@ app.use(session({
     name: 'Placements',
     // TODO change the secret before deployment in production mode
     secret: 'blahsomething',
-    saveUninitialized: false,
-    resave: false,
-    cookie: {
-        maxAge: (1000 * 60 * 100)
+    resave: true,
     },
-    store: new MongoStore(
-        {
-            mongooseConnection: db,
-            autoRemove: 'disabled'
-        },
-        function(err){
-            console.log(err ||  'connect-mongodb setup ok');
-        }
-    )
-}));
+    ))
 
 //Passport Initialization
 app.use(passport.initialize());

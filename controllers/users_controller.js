@@ -38,11 +38,11 @@ module.exports.createUser = function(req, res){
         if (!user){
             User.create(req.body, function(err, user){
                 if(err){req.flash('error', err); return}
-
+                req.flash('success', 'You registered successfully now you can signin')
                 return res.redirect('/users/sign-in');
             });
         }else{
-            req.flash('success', 'You have signed up, login to continue!');
+            req.flash('success', 'You are already signed up, Signin to continue!');
             return res.redirect('back');
         }
     });
