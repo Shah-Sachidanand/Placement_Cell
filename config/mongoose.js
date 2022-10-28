@@ -2,7 +2,7 @@
 //Database Connection File
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/Placement-Cell',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://Sachiii:Sachiii@cluster0.qfobsr3.mongodb.net/Placement-Cell?retryWrites=true&w=majority',{useNewUrlParser:true});
 
 const db = mongoose.connection;
 

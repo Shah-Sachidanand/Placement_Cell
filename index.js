@@ -1,7 +1,7 @@
 //Express Server
 const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 8000;
 const db = require('./config/mongoose');
 
 const expressLayouts = require('express-ejs-layouts');
@@ -62,9 +62,9 @@ app.use(customMware.setFlash);
 app.use('/', require('./routes'));
 
 //Server Listener
-app.listen(port, function(err){
+app.listen(PORT, function(err){
     if (err){
         console.log(`Error in running the server: ${err}`);
     }
-    console.log(`Server is running on port: ${port}`);
+    console.log(`Server is running on port: ${PORT}`);
 });
